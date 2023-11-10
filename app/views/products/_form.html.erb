@@ -1,4 +1,3 @@
-<%= turbo_frame_tag 'my_frame' do %>
 <%= form_with(model: @product, local: true) do |form| %>
   <% if @product.errors.any? %>
     <div id="error_explanation">
@@ -36,4 +35,3 @@
     <%= form.submit %>
   </div>
 <% end %>
-  <% end %>
