@@ -1,19 +1,64 @@
-default: &default
-  adapter: postgresql
-  encoding: unicode
-  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
-  timeout: 5000
+# default: &default
+#   adapter: postgresql
+#   encoding: unicode
+#   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+#   timeout: 5000
 
-development:
-  <<: *default
-  database: docker_example_development
+# development:
+#   <<: *default
+#   database: docker_example_development
 
-test:
-  <<: *default
-  database: docker_example_test
+# test:
+#   <<: *default
+#   database: docker_example_test
 
-production:
-  <<: *default
-  database: docker_example_production
-  username: postgres
-  password: postgres
+# production:
+#   <<: *default
+#   database: docker_example_production
+#   username: postgres
+#   password: postgres
+
+  # default: &default
+  #  adapter: postgresql
+  #  encoding: unicode
+  #  pool: 5
+  #  username: postgres
+  #  password: postgres
+  #  host: localhost
+  #  database: docker_example_development
+  # development:
+  #  <<: *default
+  # production:
+  #  <<: *default
+
+  # default: &default
+  #   adapter: postgresql
+  #   encoding: unicode
+  #   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  #   database: your_database_name
+  #   username: postgres
+  #   password: postgres
+  #   host: localhost  # Use the service name from docker-compose.yml
+  #   port: 5432
+  # development:
+  #   <<: *default
+  # production:
+  #   <<: *default
+  #   adapter: postgresql
+  #   database: your_database_name_prod
+
+  default: &default
+    adapter: postgresql
+    encoding: unicode
+    pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+    database: your_database_name
+    username: postgres
+    password: postgres
+    host: db  # Use the service name from docker-compose.yml
+    port: 5432
+  development:
+    <<: *default
+  production:
+    <<: *default
+    adapter: postgresql
+    database: your_database_name_prod
