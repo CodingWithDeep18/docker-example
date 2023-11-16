@@ -1585,3 +1585,545 @@ Processing by ProductsController#index as HTML
 Completed 200 OK in 14ms (Views: 10.4ms | ActiveRecord: 0.9ms | Allocations: 17874)
 
 
+Started GET "/" for ::1 at 2023-11-16 14:00:06 +0530
+  [1m[36mActiveRecord::SchemaMigration Load (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by ProductsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Exists? (0.5ms)[0m  [1m[34mSELECT 1 AS one FROM "products" LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/views/products/index.html.erb:2
+  Rendered products/index.html.erb within layouts/application (Duration: 7.7ms | Allocations: 3028)
+  Rendered layout layouts/application.html.erb (Duration: 50.6ms | Allocations: 38234)
+Completed 200 OK in 64ms (Views: 48.8ms | ActiveRecord: 4.0ms | Allocations: 55282)
+
+
+Started GET "/payments/new" for ::1 at 2023-11-16 14:00:08 +0530
+Processing by PaymentsController#new as HTML
+Completed 500 Internal Server Error in 508ms (ActiveRecord: 0.0ms | Allocations: 2236)
+
+
+  
+Stripe::InvalidRequestError (Missing required param: success_url.):
+  
+app/controllers/concerns/payments_controller.rb:3:in `new'
+Started GET "/payments/new" for ::1 at 2023-11-16 14:00:33 +0530
+Processing by PaymentsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering payments/new.html.erb within layouts/application
+  Rendered payments/new.html.erb within layouts/application (Duration: 0.2ms | Allocations: 129)
+  Rendered layout layouts/application.html.erb (Duration: 7.5ms | Allocations: 14404)
+Completed 200 OK in 9ms (Views: 8.3ms | ActiveRecord: 0.0ms | Allocations: 15519)
+
+
+Started GET "/payments/new" for ::1 at 2023-11-16 14:01:42 +0530
+Processing by PaymentsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering payments/new.html.erb within layouts/application
+  Rendered payments/new.html.erb within layouts/application (Duration: 0.2ms | Allocations: 125)
+  Rendered layout layouts/application.html.erb (Duration: 50.0ms | Allocations: 14311)
+Completed 200 OK in 52ms (Views: 51.1ms | ActiveRecord: 0.0ms | Allocations: 15419)
+
+
+Started GET "/payments/new" for ::1 at 2023-11-16 14:02:08 +0530
+Processing by PaymentsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering payments/new.html.erb within layouts/application
+  Rendered payments/new.html.erb within layouts/application (Duration: 0.5ms | Allocations: 127)
+  Rendered layout layouts/application.html.erb (Duration: 14.3ms | Allocations: 14376)
+Completed 200 OK in 17ms (Views: 16.2ms | ActiveRecord: 0.0ms | Allocations: 15490)
+
+
+Started GET "/payments/new" for ::1 at 2023-11-16 14:02:18 +0530
+Processing by PaymentsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering payments/new.html.erb within layouts/application
+  Rendered payments/new.html.erb within layouts/application (Duration: 0.3ms | Allocations: 125)
+  Rendered layout layouts/application.html.erb (Duration: 8.2ms | Allocations: 14294)
+Completed 200 OK in 10ms (Views: 9.1ms | ActiveRecord: 0.0ms | Allocations: 15404)
+
+
+Started GET "/payments/new" for ::1 at 2023-11-16 14:02:19 +0530
+Processing by PaymentsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering payments/new.html.erb within layouts/application
+  Rendered payments/new.html.erb within layouts/application (Duration: 0.0ms | Allocations: 6)
+  Rendered layout layouts/application.html.erb (Duration: 5.1ms | Allocations: 2215)
+Completed 200 OK in 7ms (Views: 6.0ms | ActiveRecord: 0.0ms | Allocations: 2516)
+
+
+Started GET "/payments/new" for ::1 at 2023-11-16 14:02:23 +0530
+Processing by PaymentsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering payments/new.html.erb within layouts/application
+  Rendered payments/new.html.erb within layouts/application (Duration: 0.1ms | Allocations: 6)
+  Rendered layout layouts/application.html.erb (Duration: 4.4ms | Allocations: 2222)
+Completed 200 OK in 6ms (Views: 5.2ms | ActiveRecord: 0.0ms | Allocations: 2515)
+
+
+Started GET "/payments/new" for ::1 at 2023-11-16 14:02:24 +0530
+Processing by PaymentsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering payments/new.html.erb within layouts/application
+  Rendered payments/new.html.erb within layouts/application (Duration: 0.3ms | Allocations: 125)
+  Rendered layout layouts/application.html.erb (Duration: 11.0ms | Allocations: 14416)
+Completed 200 OK in 13ms (Views: 12.3ms | ActiveRecord: 0.0ms | Allocations: 15523)
+
+
+Started GET "/payments/new" for ::1 at 2023-11-16 14:02:25 +0530
+Processing by PaymentsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering payments/new.html.erb within layouts/application
+  Rendered payments/new.html.erb within layouts/application (Duration: 0.0ms | Allocations: 6)
+  Rendered layout layouts/application.html.erb (Duration: 1.9ms | Allocations: 2224)
+Completed 200 OK in 2ms (Views: 2.2ms | ActiveRecord: 0.0ms | Allocations: 2517)
+
+
+Started GET "/payments/new" for ::1 at 2023-11-16 14:02:25 +0530
+Processing by PaymentsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering payments/new.html.erb within layouts/application
+  Rendered payments/new.html.erb within layouts/application (Duration: 0.0ms | Allocations: 6)
+  Rendered layout layouts/application.html.erb (Duration: 2.0ms | Allocations: 2234)
+Completed 200 OK in 3ms (Views: 2.3ms | ActiveRecord: 0.0ms | Allocations: 2527)
+
+
+Started GET "/payments/new" for ::1 at 2023-11-16 14:02:51 +0530
+Processing by PaymentsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering payments/new.html.erb within layouts/application
+  Rendered payments/new.html.erb within layouts/application (Duration: 0.0ms | Allocations: 6)
+  Rendered layout layouts/application.html.erb (Duration: 3.7ms | Allocations: 2236)
+Completed 200 OK in 5ms (Views: 4.5ms | ActiveRecord: 0.0ms | Allocations: 2536)
+
+
+Started GET "/payments/new" for ::1 at 2023-11-16 14:03:07 +0530
+Processing by PaymentsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering payments/new.html.erb within layouts/application
+  Rendered payments/new.html.erb within layouts/application (Duration: 0.4ms | Allocations: 129)
+  Rendered layout layouts/application.html.erb (Duration: 8.0ms | Allocations: 14382)
+Completed 200 OK in 10ms (Views: 9.4ms | ActiveRecord: 0.0ms | Allocations: 15492)
+
+
+Started GET "/payments/new" for ::1 at 2023-11-16 14:04:40 +0530
+Processing by PaymentsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering payments/new.html.erb within layouts/application
+  Rendered payments/new.html.erb within layouts/application (Duration: 0.2ms | Allocations: 124)
+  Rendered layout layouts/application.html.erb (Duration: 6.9ms | Allocations: 14316)
+Completed 200 OK in 8ms (Views: 7.8ms | ActiveRecord: 0.0ms | Allocations: 15426)
+
+
+Started GET "/payments/new" for ::1 at 2023-11-16 14:05:03 +0530
+Processing by PaymentsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering payments/new.html.erb within layouts/application
+  Rendered payments/new.html.erb within layouts/application (Duration: 0.3ms | Allocations: 202)
+  Rendered layout layouts/application.html.erb (Duration: 6.7ms | Allocations: 14455)
+Completed 200 OK in 8ms (Views: 7.5ms | ActiveRecord: 0.0ms | Allocations: 15563)
+
+
+Started GET "/products" for ::1 at 2023-11-16 14:05:05 +0530
+Processing by ProductsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "products" LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/views/products/index.html.erb:2
+  Rendered products/index.html.erb within layouts/application (Duration: 4.5ms | Allocations: 1688)
+  Rendered layout layouts/application.html.erb (Duration: 6.9ms | Allocations: 3910)
+Completed 200 OK in 10ms (Views: 6.2ms | ActiveRecord: 1.3ms | Allocations: 5272)
+
+
+Started GET "/payments/new" for ::1 at 2023-11-16 14:05:07 +0530
+Processing by PaymentsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering payments/new.html.erb within layouts/application
+  Rendered payments/new.html.erb within layouts/application (Duration: 0.3ms | Allocations: 43)
+  Rendered layout layouts/application.html.erb (Duration: 4.9ms | Allocations: 2256)
+Completed 200 OK in 6ms (Views: 5.4ms | ActiveRecord: 0.0ms | Allocations: 2550)
+
+
+Started GET "/products" for ::1 at 2023-11-16 14:05:08 +0530
+Processing by ProductsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "products" LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/views/products/index.html.erb:2
+  Rendered products/index.html.erb within layouts/application (Duration: 1.5ms | Allocations: 586)
+  Rendered layout layouts/application.html.erb (Duration: 4.3ms | Allocations: 2803)
+Completed 200 OK in 5ms (Views: 4.6ms | ActiveRecord: 0.3ms | Allocations: 3126)
+
+
+Started GET "/payments/new" for ::1 at 2023-11-16 14:05:10 +0530
+Processing by PaymentsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering payments/new.html.erb within layouts/application
+  Rendered payments/new.html.erb within layouts/application (Duration: 0.1ms | Allocations: 43)
+  Rendered layout layouts/application.html.erb (Duration: 3.3ms | Allocations: 2250)
+Completed 200 OK in 4ms (Views: 3.8ms | ActiveRecord: 0.0ms | Allocations: 2544)
+
+
+Started POST "/create-checkout-session" for ::1 at 2023-11-16 14:05:22 +0530
+  
+ActionController::RoutingError (No route matches [POST] "/create-checkout-session"):
+  
+Started GET "/payments/new" for ::1 at 2023-11-16 14:05:22 +0530
+Processing by PaymentsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering payments/new.html.erb within layouts/application
+  Rendered payments/new.html.erb within layouts/application (Duration: 0.1ms | Allocations: 43)
+  Rendered layout layouts/application.html.erb (Duration: 2.3ms | Allocations: 2258)
+Completed 200 OK in 3ms (Views: 2.7ms | ActiveRecord: 0.0ms | Allocations: 2551)
+
+
+Started GET "/" for ::1 at 2023-11-16 14:05:30 +0530
+Processing by ProductsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Exists? (0.3ms)[0m  [1m[34mSELECT 1 AS one FROM "products" LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/views/products/index.html.erb:2
+  Rendered products/index.html.erb within layouts/application (Duration: 1.2ms | Allocations: 575)
+  Rendered layout layouts/application.html.erb (Duration: 3.7ms | Allocations: 2788)
+Completed 200 OK in 4ms (Views: 3.9ms | ActiveRecord: 0.3ms | Allocations: 3106)
+
+
+Started GET "/rails/info/routes" for ::1 at 2023-11-16 14:05:31 +0530
+Processing by Rails::InfoController#routes as HTML
+  Rendering layout /home/bacancy/.rbenv/versions/3.0.0/lib/ruby/gems/3.0.0/gems/railties-7.1.1/lib/rails/templates/layouts/application.html.erb
+  Rendering /home/bacancy/.rbenv/versions/3.0.0/lib/ruby/gems/3.0.0/gems/railties-7.1.1/lib/rails/templates/rails/info/routes.html.erb within layouts/application
+  Rendered collection of /home/bacancy/.rbenv/versions/3.0.0/lib/ruby/gems/3.0.0/gems/actionpack-7.1.1/lib/action_dispatch/middleware/templates/routes/_route.html.erb [38 times] (Duration: 3.9ms | Allocations: 6562)
+  Rendered /home/bacancy/.rbenv/versions/3.0.0/lib/ruby/gems/3.0.0/gems/actionpack-7.1.1/lib/action_dispatch/middleware/templates/routes/_table.html.erb (Duration: 0.6ms | Allocations: 1105)
+  Rendered /home/bacancy/.rbenv/versions/3.0.0/lib/ruby/gems/3.0.0/gems/railties-7.1.1/lib/rails/templates/rails/info/routes.html.erb within layouts/application (Duration: 6.6ms | Allocations: 11479)
+  Rendered layout /home/bacancy/.rbenv/versions/3.0.0/lib/ruby/gems/3.0.0/gems/railties-7.1.1/lib/rails/templates/layouts/application.html.erb (Duration: 6.9ms | Allocations: 11853)
+Completed 200 OK in 9ms (Views: 7.8ms | ActiveRecord: 0.0ms | Allocations: 12951)
+
+
+Started GET "/payments/new" for ::1 at 2023-11-16 14:07:38 +0530
+Processing by PaymentsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering payments/new.html.erb within layouts/application
+  Rendered payments/new.html.erb within layouts/application (Duration: 0.9ms | Allocations: 650)
+  Rendered layout layouts/application.html.erb (Duration: 7.1ms | Allocations: 14622)
+Completed 200 OK in 9ms (Views: 8.2ms | ActiveRecord: 0.0ms | Allocations: 15729)
+
+
+Started GET "/payments/new" for ::1 at 2023-11-16 14:07:49 +0530
+Processing by PaymentsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering payments/new.html.erb within layouts/application
+  Rendered payments/new.html.erb within layouts/application (Duration: 1.1ms | Allocations: 603)
+  Rendered layout layouts/application.html.erb (Duration: 7.2ms | Allocations: 14575)
+Completed 200 OK in 9ms (Views: 8.2ms | ActiveRecord: 0.0ms | Allocations: 15682)
+
+
+Started POST "/create-session" for ::1 at 2023-11-16 14:07:51 +0530
+Processing by PaymentsController#create_session as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "commit"=>"Checkout"}
+Completed 500 Internal Server Error in 410ms (ActiveRecord: 0.0ms | Allocations: 2026)
+
+
+  
+Stripe::InvalidRequestError (Missing required param: success_url.):
+  
+app/controllers/concerns/payments_controller.rb:5:in `create_session'
+Started GET "/products" for ::1 at 2023-11-16 14:07:54 +0530
+Processing by ProductsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Exists? (0.1ms)[0m  [1m[34mSELECT 1 AS one FROM "products" LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/views/products/index.html.erb:2
+  Rendered products/index.html.erb within layouts/application (Duration: 3.4ms | Allocations: 1684)
+  Rendered layout layouts/application.html.erb (Duration: 6.0ms | Allocations: 3910)
+Completed 200 OK in 9ms (Views: 6.0ms | ActiveRecord: 0.8ms | Allocations: 5277)
+
+
+Started GET "/products" for ::1 at 2023-11-16 14:07:54 +0530
+Processing by ProductsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "products" LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/views/products/index.html.erb:2
+  Rendered products/index.html.erb within layouts/application (Duration: 1.1ms | Allocations: 580)
+  Rendered layout layouts/application.html.erb (Duration: 3.2ms | Allocations: 2799)
+Completed 200 OK in 4ms (Views: 3.3ms | ActiveRecord: 0.2ms | Allocations: 3117)
+
+
+Started GET "/payments/new" for ::1 at 2023-11-16 14:07:57 +0530
+Processing by PaymentsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering payments/new.html.erb within layouts/application
+  Rendered payments/new.html.erb within layouts/application (Duration: 0.5ms | Allocations: 363)
+  Rendered layout layouts/application.html.erb (Duration: 2.2ms | Allocations: 2386)
+Completed 200 OK in 3ms (Views: 2.5ms | ActiveRecord: 0.0ms | Allocations: 2680)
+
+
+Started GET "/payments/new" for ::1 at 2023-11-16 14:23:02 +0530
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PaymentsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering payments/new.html.erb within layouts/application
+  Rendered payments/new.html.erb within layouts/application (Duration: 3.2ms | Allocations: 2927)
+  Rendered layout layouts/application.html.erb (Duration: 30.6ms | Allocations: 37845)
+Completed 200 OK in 36ms (Views: 32.6ms | ActiveRecord: 0.0ms | Allocations: 43893)
+
+
+Started POST "/create-session" for ::1 at 2023-11-16 14:23:05 +0530
+Processing by PaymentsController#create_session as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "commit"=>"Checkout"}
+Completed 500 Internal Server Error in 646ms (ActiveRecord: 0.0ms | Allocations: 2674)
+
+
+  
+Stripe::InvalidRequestError (Not a valid URL):
+  
+app/controllers/concerns/payments_controller.rb:5:in `create_session'
+Started GET "/payments/new" for ::1 at 2023-11-16 14:23:30 +0530
+Processing by PaymentsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering payments/new.html.erb within layouts/application
+  Rendered payments/new.html.erb within layouts/application (Duration: 1.2ms | Allocations: 365)
+  Rendered layout layouts/application.html.erb (Duration: 4.5ms | Allocations: 2411)
+Completed 200 OK in 6ms (Views: 5.5ms | ActiveRecord: 0.0ms | Allocations: 2721)
+
+
+Started POST "/create-session" for ::1 at 2023-11-16 14:23:32 +0530
+Processing by PaymentsController#create_session as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "commit"=>"Checkout"}
+Completed 500 Internal Server Error in 417ms (ActiveRecord: 0.0ms | Allocations: 2128)
+
+
+  
+Stripe::InvalidRequestError (Not a valid URL):
+  
+app/controllers/concerns/payments_controller.rb:5:in `create_session'
+Started GET "/payments/new" for ::1 at 2023-11-16 14:23:42 +0530
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by PaymentsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering payments/new.html.erb within layouts/application
+  Rendered payments/new.html.erb within layouts/application (Duration: 3.5ms | Allocations: 2931)
+  Rendered layout layouts/application.html.erb (Duration: 28.9ms | Allocations: 37891)
+Completed 200 OK in 34ms (Views: 30.8ms | ActiveRecord: 0.0ms | Allocations: 43939)
+
+
+Started POST "/create-session" for ::1 at 2023-11-16 14:23:44 +0530
+Processing by PaymentsController#create_session as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "commit"=>"Checkout"}
+Completed 500 Internal Server Error in 831ms (ActiveRecord: 0.0ms | Allocations: 6901)
+
+
+  
+NoMethodError (undefined method `redirect' for #<PaymentsController:0x0000000000c058>
+Did you mean?  redirect_to):
+  
+app/controllers/concerns/payments_controller.rb:20:in `create_session'
+Started GET "/payments/new" for ::1 at 2023-11-16 14:24:14 +0530
+Processing by PaymentsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering payments/new.html.erb within layouts/application
+  Rendered payments/new.html.erb within layouts/application (Duration: 0.9ms | Allocations: 606)
+  Rendered layout layouts/application.html.erb (Duration: 8.1ms | Allocations: 14686)
+Completed 200 OK in 10ms (Views: 9.1ms | ActiveRecord: 0.0ms | Allocations: 15798)
+
+
+Started POST "/create-session" for ::1 at 2023-11-16 14:24:16 +0530
+Processing by PaymentsController#create_session as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "commit"=>"Checkout"}
+Redirected to 
+Completed 500 Internal Server Error in 650ms (ActiveRecord: 0.0ms | Allocations: 4626)
+
+
+  
+NoMethodError (undefined method `delete' for 303:Integer):
+  
+app/controllers/concerns/payments_controller.rb:20:in `create_session'
+Started GET "/payments/new" for ::1 at 2023-11-16 14:24:36 +0530
+Processing by PaymentsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering payments/new.html.erb within layouts/application
+  Rendered payments/new.html.erb within layouts/application (Duration: 2.8ms | Allocations: 598)
+  Rendered layout layouts/application.html.erb (Duration: 16.0ms | Allocations: 14679)
+Completed 200 OK in 20ms (Views: 18.3ms | ActiveRecord: 0.0ms | Allocations: 15790)
+
+
+Started POST "/create-session" for ::1 at 2023-11-16 14:24:37 +0530
+Processing by PaymentsController#create_session as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "commit"=>"Checkout"}
+Redirected to 
+Completed 500 Internal Server Error in 733ms (ActiveRecord: 0.0ms | Allocations: 3816)
+
+
+  
+ActionController::Redirecting::UnsafeRedirectError (Unsafe redirect to "https://checkout.stripe.com/c/pay/cs_test_a1IPBTxgIWZpNqTwj8EoqOr3pEieWnL2XtpvDScGnS73imfg7RirP8n...", pass allow_other_host: true to redirect anyway.):
+  
+app/controllers/concerns/payments_controller.rb:20:in `create_session'
+Started GET "/payments/new" for ::1 at 2023-11-16 14:25:54 +0530
+Processing by PaymentsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering payments/new.html.erb within layouts/application
+  Rendered payments/new.html.erb within layouts/application (Duration: 0.9ms | Allocations: 600)
+  Rendered layout layouts/application.html.erb (Duration: 10.3ms | Allocations: 14680)
+Completed 200 OK in 12ms (Views: 11.3ms | ActiveRecord: 0.0ms | Allocations: 15792)
+
+
+Started POST "/create-session" for ::1 at 2023-11-16 14:25:56 +0530
+Processing by PaymentsController#create_session as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "commit"=>"Checkout"}
+Redirected to https://checkout.stripe.com/c/pay/cs_test_a1SW5DV7CDaVDvitEZTbCL2yU16y7RZLZkVg22kBOkXjMNX8hF2o0xXQlt#fidkdWxOYHwnPyd1blpxYHZxWjA0S2kxf0RWT0dxdE9qTnxKPGhRMkp8d2xPdkczXFxiZkRJQVxDNkpQT0Jydk41YU1EcGgxM3F%2FZG19f1xnUTRLNUJMaF12ZEJnUnQ3TnM0c3JtS2NTQF9wNTVyYjVyTEN8XycpJ2N3amhWYHdzYHcnP3F3cGApJ2lkfGpwcVF8dWAnPyd2bGtiaWBabHFgaCcpJ2BrZGdpYFVpZGZgbWppYWB3dic%2FcXdwYHgl
+Completed 302 Found in 819ms (ActiveRecord: 0.0ms | Allocations: 3330)
+
+
+Started POST "/create-session" for ::1 at 2023-11-16 14:26:11 +0530
+Processing by PaymentsController#create_session as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "commit"=>"Checkout"}
+Redirected to https://checkout.stripe.com/c/pay/cs_test_a1yTBXzUslPhi1YVp9WOysh4tYLSKjclKDvx86LxhZ0MiKLfezLIOYHC7o#fidkdWxOYHwnPyd1blpxYHZxWjA0S2kxf0RWT0dxdE9qTnxKPGhRMkp8d2xPdkczXFxiZkRJQVxDNkpQT0Jydk41YU1EcGgxM3F%2FZG19f1xnUTRLNUJMaF12ZEJnUnQ3TnM0c3JtS2NTQF9wNTVyYjVyTEN8XycpJ2N3amhWYHdzYHcnP3F3cGApJ2lkfGpwcVF8dWAnPyd2bGtiaWBabHFgaCcpJ2BrZGdpYFVpZGZgbWppYWB3dic%2FcXdwYHgl
+Completed 302 Found in 738ms (ActiveRecord: 0.0ms | Allocations: 3190)
+
+
+Started GET "/payments/new" for ::1 at 2023-11-16 14:26:59 +0530
+Processing by PaymentsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering payments/new.html.erb within layouts/application
+  Rendered payments/new.html.erb within layouts/application (Duration: 0.8ms | Allocations: 612)
+  Rendered layout layouts/application.html.erb (Duration: 7.5ms | Allocations: 14584)
+Completed 200 OK in 9ms (Views: 8.4ms | ActiveRecord: 0.0ms | Allocations: 15691)
+
+
+Started POST "/create-session" for ::1 at 2023-11-16 14:27:01 +0530
+Processing by PaymentsController#create_session as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "commit"=>"Checkout"}
+Redirected to https://checkout.stripe.com/c/pay/cs_test_a1t0vhQzpQyDoc27UrhXaZJDOZOjqWu2Dea0dhhryQhfzHWb4HjCNfZfrd#fidkdWxOYHwnPyd1blpxYHZxWjA0S2kxf0RWT0dxdE9qTnxKPGhRMkp8d2xPdkczXFxiZkRJQVxDNkpQT0Jydk41YU1EcGgxM3F%2FZG19f1xnUTRLNUJMaF12ZEJnUnQ3TnM0c3JtS2NTQF9wNTVyYjVyTEN8XycpJ2N3amhWYHdzYHcnP3F3cGApJ2lkfGpwcVF8dWAnPyd2bGtiaWBabHFgaCcpJ2BrZGdpYFVpZGZgbWppYWB3dic%2FcXdwYHgl
+Completed 302 Found in 799ms (ActiveRecord: 0.0ms | Allocations: 3402)
+
+
+Started GET "/payments/new" for ::1 at 2023-11-16 14:27:47 +0530
+Processing by PaymentsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering payments/new.html.erb within layouts/application
+  Rendered payments/new.html.erb within layouts/application (Duration: 0.8ms | Allocations: 608)
+  Rendered layout layouts/application.html.erb (Duration: 12.9ms | Allocations: 14686)
+Completed 200 OK in 14ms (Views: 13.8ms | ActiveRecord: 0.0ms | Allocations: 15793)
+
+
+Started POST "/create-session" for ::1 at 2023-11-16 14:27:48 +0530
+Processing by PaymentsController#create_session as TURBO_STREAM
+  Parameters: {"authenticity_token"=>"[FILTERED]", "commit"=>"Checkout"}
+Redirected to https://checkout.stripe.com/c/pay/cs_test_a1fEsTGbGQrnfhhUDfGMGH4UGVvJdcf2X9TkvpBBwZINSHhM5uvYMiOZnF#fidkdWxOYHwnPyd1blpxYHZxWjA0S2kxf0RWT0dxdE9qTnxKPGhRMkp8d2xPdkczXFxiZkRJQVxDNkpQT0Jydk41YU1EcGgxM3F%2FZG19f1xnUTRLNUJMaF12ZEJnUnQ3TnM0c3JtS2NTQF9wNTVyYjVyTEN8XycpJ2N3amhWYHdzYHcnP3F3cGApJ2lkfGpwcVF8dWAnPyd2bGtiaWBabHFgaCcpJ2BrZGdpYFVpZGZgbWppYWB3dic%2FcXdwYHgl
+Completed 302 Found in 628ms (ActiveRecord: 0.0ms | Allocations: 3468)
+
+
+Started GET "/payments/new" for ::1 at 2023-11-16 14:29:58 +0530
+Processing by PaymentsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering payments/new.html.erb within layouts/application
+  Rendered payments/new.html.erb within layouts/application (Duration: 0.8ms | Allocations: 623)
+  Rendered layout layouts/application.html.erb (Duration: 8.5ms | Allocations: 14635)
+Completed 200 OK in 10ms (Views: 9.4ms | ActiveRecord: 0.0ms | Allocations: 15745)
+
+
+Started POST "/create-session" for ::1 at 2023-11-16 14:30:02 +0530
+Processing by PaymentsController#create_session as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "commit"=>"Checkout"}
+Redirected to https://checkout.stripe.com/c/pay/cs_test_a1pA6ox9xWZP2oQSqlnndOZo3fQHsC5pIiwqELoQ6N6FklFx8IMe0X6ZAM#fidkdWxOYHwnPyd1blpxYHZxWjA0S2kxf0RWT0dxdE9qTnxKPGhRMkp8d2xPdkczXFxiZkRJQVxDNkpQT0Jydk41YU1EcGgxM3F%2FZG19f1xnUTRLNUJMaF12ZEJnUnQ3TnM0c3JtS2NTQF9wNTVyYjVyTEN8XycpJ2N3amhWYHdzYHcnP3F3cGApJ2lkfGpwcVF8dWAnPyd2bGtiaWBabHFgaCcpJ2BrZGdpYFVpZGZgbWppYWB3dic%2FcXdwYHgl
+Completed 302 Found in 713ms (ActiveRecord: 0.0ms | Allocations: 3401)
+
+
+Started POST "/create-session" for ::1 at 2023-11-16 14:30:24 +0530
+Processing by PaymentsController#create_session as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "commit"=>"Checkout"}
+Redirected to https://checkout.stripe.com/c/pay/cs_test_a1g6Wc6cf6UBcOw0nW9xuu1y0DC9yFX1cUKoDoX6Ppqo9fDMP2P6YJMnYU#fidkdWxOYHwnPyd1blpxYHZxWjA0S2kxf0RWT0dxdE9qTnxKPGhRMkp8d2xPdkczXFxiZkRJQVxDNkpQT0Jydk41YU1EcGgxM3F%2FZG19f1xnUTRLNUJMaF12ZEJnUnQ3TnM0c3JtS2NTQF9wNTVyYjVyTEN8XycpJ2N3amhWYHdzYHcnP3F3cGApJ2lkfGpwcVF8dWAnPyd2bGtiaWBabHFgaCcpJ2BrZGdpYFVpZGZgbWppYWB3dic%2FcXdwYHgl
+Completed 302 Found in 690ms (ActiveRecord: 0.0ms | Allocations: 3492)
+
+
+Started GET "/success" for ::1 at 2023-11-16 14:32:08 +0530
+Processing by PaymentsController#success as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering payments/success.html.erb within layouts/application
+  Rendered payments/success.html.erb within layouts/application (Duration: 0.9ms | Allocations: 189)
+  Rendered layout layouts/application.html.erb (Duration: 8.1ms | Allocations: 14430)
+Completed 200 OK in 10ms (Views: 9.5ms | ActiveRecord: 0.0ms | Allocations: 15538)
+
+
+Started GET "/products" for ::1 at 2023-11-16 14:32:12 +0530
+Processing by ProductsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "products" LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/views/products/index.html.erb:2
+  Rendered products/index.html.erb within layouts/application (Duration: 5.6ms | Allocations: 2860)
+  Rendered layout layouts/application.html.erb (Duration: 7.6ms | Allocations: 5084)
+Completed 200 OK in 23ms (Views: 6.5ms | ActiveRecord: 1.6ms | Allocations: 16565)
+
+
+Started GET "/payments/new" for ::1 at 2023-11-16 14:32:20 +0530
+Processing by PaymentsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering payments/new.html.erb within layouts/application
+  Rendered payments/new.html.erb within layouts/application (Duration: 1.0ms | Allocations: 576)
+  Rendered layout layouts/application.html.erb (Duration: 3.2ms | Allocations: 2599)
+Completed 200 OK in 4ms (Views: 3.7ms | ActiveRecord: 0.0ms | Allocations: 2950)
+
+
+Started POST "/create-session" for ::1 at 2023-11-16 14:32:22 +0530
+Processing by PaymentsController#create_session as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "commit"=>"Checkout"}
+Redirected to https://checkout.stripe.com/c/pay/cs_test_a1Cmga0f0ie2zgOcC35IcJ6RlWFnAbC6iNjCWJyOZVBgci6S9UtzfSm8FA#fidkdWxOYHwnPyd1blpxYHZxWjA0S2kxf0RWT0dxdE9qTnxKPGhRMkp8d2xPdkczXFxiZkRJQVxDNkpQT0Jydk41YU1EcGgxM3F%2FZG19f1xnUTRLNUJMaF12ZEJnUnQ3TnM0c3JtS2NTQF9wNTVyYjVyTEN8XycpJ2N3amhWYHdzYHcnP3F3cGApJ2lkfGpwcVF8dWAnPyd2bGtiaWBabHFgaCcpJ2BrZGdpYFVpZGZgbWppYWB3dic%2FcXdwYHgl
+Completed 302 Found in 653ms (ActiveRecord: 0.0ms | Allocations: 3471)
+
+
+Started GET "/cancel" for ::1 at 2023-11-16 14:32:31 +0530
+Processing by PaymentsController#cancel as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering payments/cancel.html.erb within layouts/application
+  Rendered payments/cancel.html.erb within layouts/application (Duration: 0.6ms | Allocations: 156)
+  Rendered layout layouts/application.html.erb (Duration: 4.4ms | Allocations: 2371)
+Completed 200 OK in 5ms (Views: 4.9ms | ActiveRecord: 0.0ms | Allocations: 2722)
+
+
+Started GET "/products" for ::1 at 2023-11-16 14:32:34 +0530
+Processing by ProductsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Exists? (0.4ms)[0m  [1m[34mSELECT 1 AS one FROM "products" LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/views/products/index.html.erb:2
+  Rendered products/index.html.erb within layouts/application (Duration: 1.3ms | Allocations: 586)
+  Rendered layout layouts/application.html.erb (Duration: 3.0ms | Allocations: 2795)
+Completed 200 OK in 4ms (Views: 3.0ms | ActiveRecord: 0.4ms | Allocations: 3118)
+
+
+Started GET "/payments/new" for ::1 at 2023-11-16 14:34:38 +0530
+Processing by PaymentsController#new as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering payments/new.html.erb within layouts/application
+  Rendered payments/new.html.erb within layouts/application (Duration: 0.9ms | Allocations: 621)
+  Rendered layout layouts/application.html.erb (Duration: 7.4ms | Allocations: 14696)
+Completed 200 OK in 9ms (Views: 8.3ms | ActiveRecord: 0.0ms | Allocations: 15808)
+
+
+Started POST "/create-session" for ::1 at 2023-11-16 14:34:40 +0530
+Processing by PaymentsController#create_session as HTML
+  Parameters: {"authenticity_token"=>"[FILTERED]", "commit"=>"Checkout"}
+Redirected to https://checkout.stripe.com/c/pay/cs_test_a16xhadFgpHZLKvIRQn1qtrRzXKpFZtzlcBXq1McUYSfg5xcTEba1UVRZ6#fidkdWxOYHwnPyd1blpxYHZxWjA0S2kxf0RWT0dxdE9qTnxKPGhRMkp8d2xPdkczXFxiZkRJQVxDNkpQT0Jydk41YU1EcGgxM3F%2FZG19f1xnUTRLNUJMaF12ZEJnUnQ3TnM0c3JtS2NTQF9wNTVyYjVyTEN8XycpJ2N3amhWYHdzYHcnP3F3cGApJ2lkfGpwcVF8dWAnPyd2bGtiaWBabHFgaCcpJ2BrZGdpYFVpZGZgbWppYWB3dic%2FcXdwYHgl
+Completed 302 Found in 710ms (ActiveRecord: 0.0ms | Allocations: 3437)
+
+
+Started GET "/cancel" for ::1 at 2023-11-16 14:34:46 +0530
+Processing by PaymentsController#cancel as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering payments/cancel.html.erb within layouts/application
+  Rendered payments/cancel.html.erb within layouts/application (Duration: 0.5ms | Allocations: 155)
+  Rendered layout layouts/application.html.erb (Duration: 3.6ms | Allocations: 2376)
+Completed 200 OK in 5ms (Views: 4.3ms | ActiveRecord: 0.0ms | Allocations: 2726)
+
+
+Started GET "/products" for ::1 at 2023-11-16 14:34:54 +0530
+Processing by ProductsController#index as HTML
+  Rendering layout layouts/application.html.erb
+  Rendering products/index.html.erb within layouts/application
+  [1m[36mProduct Exists? (0.2ms)[0m  [1m[34mSELECT 1 AS one FROM "products" LIMIT $1[0m  [["LIMIT", 1]]
+  ↳ app/views/products/index.html.erb:2
+  Rendered products/index.html.erb within layouts/application (Duration: 7.4ms | Allocations: 1689)
+  Rendered layout layouts/application.html.erb (Duration: 10.8ms | Allocations: 3901)
+Completed 200 OK in 15ms (Views: 9.7ms | ActiveRecord: 2.0ms | Allocations: 5260)
+
+

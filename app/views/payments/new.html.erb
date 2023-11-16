@@ -1,0 +1,13 @@
+<div class="product">
+  <img src="https://images.unsplash.com/photo-1592750475338-74b7b21085ab?crop=entropy&cs=srgb&fm=jpg&ixid=M3w1MDE1MDB8MHwxfHNlYXJjaHwyMHx8aXBob25lfGVufDB8fHx8MTcwMDEyMzQ0OHww&ixlib=rb-4.0.3&q=85" alt="The Iphone 15 pro" width="50%" />
+  <div class="description">
+    <h3>Iphone 15 pro</h3>
+    <h5>₹80000.00</h5>
+  </div>
+</div>
+
+<%= form_with url: create_session_path, method: :post, data: { turbo: false }  do |form| %>
+  <%= form.submit "Checkout" %>
+<% end %>
+
+<%= link_to "Back to Products", products_path %>
