@@ -1,31 +1,33 @@
 <h1>Products</h1>
-
-<table>
-  <thead>
-    <tr>
-      <th>Productname</th>
-      <th>Price</th>
-      <th>Description</th>
-      <th>Qty</th>
-      <th colspan="4"></th>
-    </tr>
-  </thead>
-
-  <tbody>
-    <% @products.each do |product| %>
+<% if @products.exists? %>
+  <table>
+    <thead>
       <tr>
-        <td><%= product.productname %></td>
-        <td><%= product.price %></td>
-        <td><%= product.description %></td>
-        <td><%= product.qty %></td>
-        <td><%= link_to 'Show', product %></td>
-        <td><%= link_to 'Edit', edit_product_path(product) %></td>
-        <td><%= button_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <th>Productname</th>
+        <th>Price</th>
+        <th>Description</th>
+        <th>Qty</th>
+        <th colspan="4"></th>
       </tr>
-    <% end %>
-  </tbody>
-</table>
+    </thead>
 
+    <tbody>
+      <% @products.each do |product| %>
+        <tr>
+          <td><%= product.productname %></td>
+          <td><%= product.price %></td>
+          <td><%= product.description %></td>
+          <td><%= product.qty %></td>
+          <td><%= link_to 'Show', product %></td>
+          <td><%= link_to 'Edit', edit_product_path(product) %></td>
+          <td><%= button_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        </tr>
+      <% end %>
+    </tbody>
+  </table>
 <br>
+<% else %>
+  <h3>No Products Found!</h3>
+<% end %>
 
 <%= link_to 'New Product', new_product_path %>
