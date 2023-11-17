@@ -1,0 +1,28 @@
+# Add configuration values here, as shown below.
+#
+# pusher_app_id: "2954"
+# pusher_key: 7381a978f7dd7f9a1117
+# pusher_secret: abdc3b896a0ffb85d373
+# stripe_api_key: sk_test_2J0l093xOyW72XUYJHE4Dv2r
+# stripe_publishable_key: pk_test_ro9jV5SNwGb1yYlQfzG17LHK
+#
+# production:
+#   stripe_api_key: sk_live_EeHnL644i6zo4Iyq4v1KdV9H
+#   stripe_publishable_key: pk_live_9lcthxpSIHbGwmdO941O1XVU
+
+
+development:
+  STRIPE_PUBLISHABLE_KEY: pk_test_51Nl4zASJBtqJoKyO9mT7OyriJsB6YYgcALDYF3OUJGwsK0dHAum46tzahxzYbT1N0GImXsaGbWq2Kv1vwhNfVEZu00wg0wIFyZ
+  STRIPE_SECRET_KEY: sk_test_51Nl4zASJBtqJoKyOwBnH02Ur2er39Y86ZfscnUZubz49ETS3LMbKhRkGH5Yya6lNFQ54afoJ5w1Lk9Adq0BLtubu00kIh6Qpmw
+  DOMAIN: http://localhost:3000
+  STRIPE_SIGNING_SECRET: whsec_nPZ11k7dXmJsMO3hHnxIyeOXOTFWHvpN
+
+test:
+  STRIPE_SIGNING_SECRET: your_test_signing_secret
+
+production:
+  STRIPE_PUBLISHABLE_KEY: pk_test_51Nl4zASJBtqJoKyO9mT7OyriJsB6YYgcALDYF3OUJGwsK0dHAum46tzahxzYbT1N0GImXsaGbWq2Kv1vwhNfVEZu00wg0wIFyZ
+  STRIPE_SECRET_KEY: sk_test_51Nl4zASJBtqJoKyOwBnH02Ur2er39Y86ZfscnUZubz49ETS3LMbKhRkGH5Yya6lNFQ54afoJ5w1Lk9Adq0BLtubu00kIh6Qpmw
+  DOMAIN: http://3.27.94.238:3000
+  STRIPE_SIGNING_SECRET: whsec_nPZ11k7dXmJsMO3hHnxIyeOXOTFWHvpN
+
