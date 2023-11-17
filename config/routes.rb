@@ -1,7 +1,9 @@
 Rails.application.routes.draw do
+  get 'main_dashboard/index'
   get 'up' => 'rails/health#show', as: :rails_health_check
-  root 'products#index'
+  # root 'products#index'
   resources :products
+  root 'main_dashboard#index'
 
   resources :payments, only: %i[new]
 
