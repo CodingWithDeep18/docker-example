@@ -1,161 +1,72 @@
-<!DOCTYPE html>
-<html lang="en">
-<head>
-    <style>
-        body {
-            font-family: 'Arial', sans-serif;
-            margin: 0;
-            padding: 0;
-            background-color: #f5f5f5;
-        }
-
-        header {
-            background-color: palevioletred;
-            color: white;
-            text-align: center;
-            padding: 20px;
-        }
-
-        nav {
-            background-color: #333;
-            overflow: hidden;
-        }
-
-        nav a {
-            float: left;
-            display: block;
-            color: white;
-            text-align: center;
-            padding: 14px 16px;
-            text-decoration: none;
-        }
-
-        nav a:hover {
-            background-color: #ddd;
-            color: black;
-        }
-
-        .slider {
-            margin-bottom: 30px;
-            width: 100%;
-            overflow: hidden;
-        }
-        
-
-        .slider img {
-            width: 100%;
-        }
-
-        section {
-            width: 100%%; /* Set each section to full width */
-            padding: 20px;
-            box-sizing: border-box;
-            margin: 0;
-        }
-
-        section:hover {
-            background-color: rgba(255, 255, 255, 0.8);
-            border: 1px solid #ddd;
-        }
-        .featured-dishes{
-            margin-left: 40px;
-            display: flex;
-            justify-content: space-evenly;
-        }
-        .featured-dishes .dish {
-            display: inline-block;
-        }
-
-        .about-us,
-        .contact-us {
-            background-color: #fff;
-            padding: 20px;
-            margin: 20px;
-        }
-
-        hr {
-            margin: 20px 0;
-            border: none;
-            border-top: 1px solid #ddd;
-        }
-
-        .footer {
-            background-color: #333;
-            color: white;
-            text-align: center;
-            padding: 10px;
-        }
-    </style>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Foodie Delight</title>
-    <link rel="stylesheet" href="styles.css">
-</head>
-<body>
-
-<!-- Navigation Bar -->
-<!-- Navigation Bar -->
-<nav>
-  <%= link_to "Home", main_dashboard_index_path %>
-  <a href="#">Order</a>
-  <a href="#">Signup</a>
-  <a href="#">Login</a>
-</nav>
-
-
 <!-- Header -->
 <header>
-    <h1>Welcome to Foodie Delight</h1>
-    <p>Discover the world of delicious cuisine</p>
+  <h1>Welcome to Foodie Delight</h1>
+  <p>Discover the world of delicious cuisine</p>
 </header>
 
 <!-- Image Slider -->
 <div class="slider">
-
-    <img src="https://images.unsplash.com/photo-1501959915551-4e8d30928317?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=400&ixid=MnwxfDB8MXxyYW5kb218MHx8Zm9vZHx8fHx8fDE3MDAyMDk0NzI&ixlib=rb-4.0.3&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=1200" alt="Delicious Dish 3">
+  <img
+    src="https://images.unsplash.com/photo-1501959915551-4e8d30928317?crop=entropy&cs=tinysrgb&fit=crop&fm=jpg&h=400&ixid=MnwxfDB8MXxyYW5kb218MHx8Zm9vZHx8fHx8fDE3MDAyMDk0NzI&ixlib=rb-4.0.3&q=80&utm_campaign=api-credit&utm_medium=referral&utm_source=unsplash_source&w=1200"
+    alt="Delicious Dish 3"
+  />
 </div>
 
 <!-- Featured Dishes -->
 <header>
-<h2>Featured Dishes</h2>
+  <h2>Featured Dishes</h2>
 </header>
 <section class="featured-dishes">
-    <div class="dish">
-        <img src="https://source.unsplash.com/400x300/?pasta" alt="Featured Dish 1">
-        <h3>Spaghetti Carbonara</h3>
-        <p>A classic Italian pasta dish, cheese, pancetta, and black pepper.</p>
-    </div>
-    <div class="dish">
-        <img src="https://source.unsplash.com/400x300/?sushi" alt="Featured Dish 2">
-        <h3>Sushi Platter</h3>
-        <p>art of Japanese cuisine with our fresh and delicious sushi.</p>
-    </div>
-    <div class="dish">
-        <img src="https://source.unsplash.com/400x300/?chocolate" alt="Featured Dish 3">
-        <h3>Chocolate Fondue</h3>
-        <p>weetness of chocolate fondue served with fruits and pastries.</p>
-    </div>
+  <div class="dish">
+    <img
+      src="https://source.unsplash.com/400x300/?pasta"
+      alt="Featured Dish 1"
+    />
+    <h3>Spaghetti Carbonara</h3>
+    <p>A classic Italian pasta dish, cheese, pancetta, and black pepper.</p>
+  </div>
+  <div class="dish">
+    <img
+      src="https://source.unsplash.com/400x300/?sushi"
+      alt="Featured Dish 2"
+    />
+    <h3>Sushi Platter</h3>
+    <p>art of Japanese cuisine with our fresh and delicious sushi.</p>
+  </div>
+  <div class="dish">
+    <img
+      src="https://source.unsplash.com/400x300/?chocolate"
+      alt="Featured Dish 3"
+    />
+    <h3>Chocolate Fondue</h3>
+    <p>weetness of chocolate fondue served with fruits and pastries.</p>
+  </div>
 </section>
 <header>
-    <h2>About Us</h2>
+  <h2>About Us</h2>
 </header>
 <!-- About Us -->
 <section class="about-us">
-    <p>Welcome to Foodie Delight, your go-to destination for exploring and savoring delightful dishes from around the world. Our passion is to bring you the best culinary experiences that will tantalize your taste buds and leave you craving for more.</p>
+  <p>
+    Welcome to Foodie Delight, your go-to destination for exploring and savoring
+    delightful dishes from around the world. Our passion is to bring you the
+    best culinary experiences that will tantalize your taste buds and leave you
+    craving for more.
+  </p>
 </section>
 
 <!-- Contact Us -->
 <header>
-    <h2>Contact Us</h2>
+  <h2>Contact Us</h2>
 </header>
 <section class="contact-us">
-    <p>Have a question or want to share your feedback? Contact us at <a href="mailto:info@foodiedelight.com">info@foodiedelight.com</a></p>
+  <p>
+    Have a question or want to share your feedback? Contact us at
+    <a href="mailto:info@foodiedelight.com">info@foodiedelight.com</a>
+  </p>
 </section>
 
 <!-- Footer -->
 <footer>
-    <p>&copy; 2023 Foodie Delight. All rights reserved.</p>
+  <p>&copy; 2023 Foodie Delight. All rights reserved.</p>
 </footer>
-
-</body>
-</html>
