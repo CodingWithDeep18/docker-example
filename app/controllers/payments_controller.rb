@@ -7,7 +7,7 @@ class PaymentsController < ApplicationController
                                                  line_items: [
                                                    {
                                                      price_data: {
-                                                       currency: 'usd',
+                                                       currency: 'inr',
                                                        product_data: { name: 'Iphone 15 pro' },
                                                        unit_amount: 80_000 * 100
                                                      },
