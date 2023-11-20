@@ -13,18 +13,8 @@
   </head>
 
   <body>
-    <% flash.each do |type, msg| %>
-      <div>
-        <%= msg %>
-      </div>
-    <% end %>
-    <nav>
-      <%= link_to "Home", main_dashboard_index_path %>
-      <a href="#">Order</a>
-      <a href="#">Signup</a>
-      <a href="#">Login</a>
-      <%= link_to "Products", products_path %>
-    </nav>
+    <%= render 'layouts/flash' %>
+    <%= render 'layouts/navbar' %>
     <%= yield %>
   </body>
 </html>
