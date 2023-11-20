@@ -5,6 +5,8 @@ class ProductsController < ApplicationController
     @products = Product.all
   end
 
+  def add; end
+
   def show; end
 
   def new
@@ -34,6 +36,15 @@ class ProductsController < ApplicationController
   def destroy
     @product.destroy
     redirect_to products_url, notice: 'Product was successfully destroyed.'
+  end
+
+  def import
+    return redirect_to request.referer, notice: 'No file added' if params[:file].nil?
+    return redirect_to request.referer, notice: 'Only CSV files allowed' unless params[:file].content_type == 'text/csv'
+
+    CsvImportService.new.call(params[:file])
+
+    redirect_to request.referer, notice: 'Import started..! Products will imported soon!'
   end
 
   private
