@@ -12,9 +12,7 @@ class CsvImportService
       product_hash[:description] = row[2]
       product_hash[:qty] = row[3]
 
-      Product.find_or_create_by!(product_hash)
-      # for performance, you could create a separate job to import each user
-      # CsvImportJob.perform_later(user_hash)
+      CsvImportJob.perform_later(product_hash)
     end
   end
 end
