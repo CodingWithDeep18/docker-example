@@ -1,5 +1,6 @@
 <h1>Products</h1>
 <% if @products.exists? %>
+  <%== pagy_bootstrap_nav(@pagy) %>
   <table>
     <thead>
       <tr>
@@ -18,9 +19,9 @@
           <td><%= product.price %></td>
           <td><%= product.description %></td>
           <td><%= product.qty %></td>
-          <td><%= link_to 'Show', product %></td>
-          <td><%= link_to 'Edit', edit_product_path(product) %></td>
-          <td><%= button_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+          <td><%= link_to 'Show', product, class: 'btn btn-primary btn-sm' %></td>
+          <td><%= link_to 'Edit', edit_product_path(product), class: 'btn btn-secondary btn-sm' %></td>
+          <td><%= button_to 'Destroy', product, method: :delete, data: { confirm: 'Are you sure?' }, class: 'btn btn-danger btn-sm' %></td>
         </tr>
       <% end %>
     </tbody>
