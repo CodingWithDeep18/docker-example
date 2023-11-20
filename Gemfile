@@ -52,9 +52,11 @@ gem 'stripe'
 
 gem 'dotenv-rails'
 
-# Gemfile
-
 gem 'figaro'
+
+gem "cssbundling-rails", "~> 1.3"
+
+gem "jsbundling-rails", "~> 1.2"
 
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem

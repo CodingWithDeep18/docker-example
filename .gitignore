@@ -33,3 +33,7 @@
 .env.*
 # Ignore application configuration
 /config/application.yml
+/node_modules
+
+/app/assets/builds/*
+!/app/assets/builds/.keep

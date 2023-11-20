@@ -19,6 +19,8 @@ class PaymentsController < ApplicationController
                                                  cancel_url: "#{ENV['DOMAIN']}/cancel"
                                                })
     redirect_to session.url, allow_other_host: true
+  rescue StandardError => e
+    redirect_to new_payment_path, notice: e.message
   end
 
   def success; end
