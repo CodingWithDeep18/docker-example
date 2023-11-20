@@ -1,5 +1,5 @@
 <h1>Import Products</h1>
-<%= form_tag import_products_path, method: :post, multipart: true do %>
+<%= form_tag import_products_path, method: :post, multipart: true, data: { turbo: false } do %>
   <%= file_field_tag :file, accept: ".csv" %>
   <%= link_to "/sample-products.csv",target: "_blank", class: 'btn btn-info' do %>Download Sample File<% end %>
   <%= submit_tag '⚙️ Import' %>
