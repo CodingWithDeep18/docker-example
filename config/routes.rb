@@ -1,10 +1,17 @@
+require 'sidekiq/web'
+
 Rails.application.routes.draw do
+  mount Sidekiq::Web => '/sidekiq'
+  root 'main_dashboard#index'
   get 'main_dashboard/index'
   get 'up' => 'rails/health#show', as: :rails_health_check
-  # root 'products#index'
-  resources :products
-  root 'main_dashboard#index'
 
+  resources :products do
+    collection do
+      get :add
+      post :import
+    end
+  end
   resources :payments, only: %i[new]
 
   post '/create-session', to: 'payments#create_session'

@@ -112,6 +112,8 @@ GEM
     drb (2.2.0)
       ruby2_keywords
     erubi (1.12.0)
+    faker (3.2.2)
+      i18n (>= 1.8.11, < 2)
     figaro (1.2.0)
       thor (>= 0.14.0, < 2)
     globalid (1.2.1)
@@ -159,6 +161,7 @@ GEM
     nio4r (2.6.0)
     nokogiri (1.15.5-x86_64-linux)
       racc (~> 1.4)
+    pagy (6.2.0)
     parallel (1.23.0)
     parser (3.2.2.4)
       ast (~> 2.4.1)
@@ -241,6 +244,11 @@ GEM
       rexml (~> 3.2, >= 3.2.5)
       rubyzip (>= 1.2.2, < 3.0)
       websocket (~> 1.0)
+    sidekiq (7.2.0)
+      concurrent-ruby (< 2)
+      connection_pool (>= 2.3.0)
+      rack (>= 2.2.4)
+      redis-client (>= 0.14.0)
     sprockets (4.2.1)
       concurrent-ruby (~> 1.0)
       rack (>= 2.2.4, < 4)
@@ -286,10 +294,12 @@ DEPENDENCIES
   cssbundling-rails (~> 1.3)
   debug
   dotenv-rails
+  faker
   figaro
   importmap-rails
   jbuilder
   jsbundling-rails (~> 1.2)
+  pagy (~> 6.2)
   pg
   puma (>= 5.0)
   rails (~> 7.1.1)
@@ -297,6 +307,7 @@ DEPENDENCIES
   rubocop (~> 1.57)
   ruby_audit
   selenium-webdriver
+  sidekiq
   sprockets-rails
   sqlite3 (~> 1.4)
   stimulus-rails

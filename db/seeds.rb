@@ -7,3 +7,8 @@
 #   ["Action", "Comedy", "Drama", "Horror"].each do |genre_name|
 #     MovieGenre.find_or_create_by!(name: genre_name)
 #   end
+500.times do
+  product_hash = { name: Faker::Commerce.product_name, price: Faker::Commerce.price(range: 1500..5000, as_string: true),
+                   description: 'THIS IS TEST PRODUCT', qty: 1 }
+  CsvImportJob.perform_later(product_hash)
+end
