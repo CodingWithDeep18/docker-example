@@ -1,0 +1,11 @@
+<% cart_product =  session[:cart_products] ? session[:cart_products].find { |prd| prd["product_id"].to_i == product_id }: nil %>
+<% if cart_product %>
+  <div class="input-group">
+    <span class="input-group-text">Quantity</span>
+    <button type="button" class="btn btn-outline-secondary" id="minus-btn" data-controller="request" data-action="click->request#sendRequest" data-request-url-value=<%= add_carts_path(status: 'minus', product_id: product_id)%>>-</button>
+    <input type="text" class="form-control text-center" value="<%= cart_product["quantity"] %>" id="<%= product_id%>-quantity" readonly />
+    <button type="button" class="btn btn-outline-secondary" id="plus-btn" data-controller="request" data-action="click->request#sendRequest" data-request-url-value=<%= add_carts_path(status: 'add', product_id: product_id)%>>+</button>
+  </div>
+<% else %>
+  <button type="button" class="btn btn-primary" data-controller="request" data-action="click->request#sendRequest" data-request-url-value=<%= add_carts_path(status: 'add', product_id: product_id)%>>Add to Cart</button>
+<% end %>
