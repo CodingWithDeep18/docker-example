@@ -1,0 +1,22 @@
+<div class="row mt-3">
+  <% if @products.exists? %>
+    <%== pagy_bootstrap_nav(@pagy) %>
+    <% @products.find_each do |product| %>
+      <div class="col-md-3">
+       <div class="card mb-3">
+        <img src="https://via.placeholder.com/50" class="card-img-top" alt="Product Image">
+        <div class="card-body">
+          <h5 class="card-title"><%= product.name %></h5>
+          <p class="card-text"><%= product.description %></p>
+          <p class="card-text"><strong>₹<%= product.price %></strong></p>
+          <div class="d-flex justify-content-between align-items-center" id="add-to-cart-<%= product.id %>">
+            <%= render 'cart_buttons', product_id: product.id %>
+          </div>
+        </div>
+      </div>
+      </div>
+    <% end %>
+  <% else %>  
+    <h3>No products found!</h3>
+  <% end %>
+</div>

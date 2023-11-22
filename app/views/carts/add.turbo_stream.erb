@@ -1,0 +1,3 @@
+<%= turbo_stream.update "add-to-cart-#{@product.id}" do %>
+  <%= render 'orders/cart_buttons', product_id: @product.id %>
+<% end %>

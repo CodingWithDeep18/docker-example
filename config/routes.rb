@@ -18,4 +18,10 @@ Rails.application.routes.draw do
   get '/success', to: 'payments#success'
   get '/cancel', to: 'payments#cancel'
   resources :webhooks, only: [:create]
+  resources :orders
+  resources :carts, only: [] do
+    collection do
+      post :add
+    end
+  end
 end
