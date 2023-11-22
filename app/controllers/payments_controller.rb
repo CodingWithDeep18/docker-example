@@ -23,7 +23,9 @@ class PaymentsController < ApplicationController
     redirect_to new_payment_path, notice: e.message
   end
 
-  def success; end
+  def success
+    session.clear
+  end
 
   def cancel; end
 end
