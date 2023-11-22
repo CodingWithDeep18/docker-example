@@ -11,7 +11,7 @@
     <% @products.find_each do |product| %>
       <div class="col-md-3">
        <div class="card mb-3">
-        <img src="https://via.placeholder.com/50" class="card-img-top" alt="Product Image">
+        <%= image_tag asset_path('test-product'), class: "card-img-top", alt: 'Product image' %>
         <div class="card-body">
           <h5 class="card-title"><%= product.name %></h5>
           <p class="card-text"><%= product.description %></p>
