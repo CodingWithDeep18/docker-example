@@ -23,7 +23,7 @@ Rails.application.routes.draw do
       post :create_payment
     end
   end
-  resources :carts, only: [] do
+  resources :carts, only: [:index] do
     collection do
       post :add
     end
