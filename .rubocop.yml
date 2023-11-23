@@ -1,2 +1,8 @@
 Metrics/MethodLength:
   Max: 1000
+Metrics/AbcSize:
+  Exclude:
+    - '**/controllers/**/*.rb'
+Metrics/CyclomaticComplexity:
+  Exclude:
+    - '**/controllers/**/*.rb'

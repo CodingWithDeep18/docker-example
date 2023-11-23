@@ -13,7 +13,6 @@ class OrdersController < ApplicationController
                                                  customer_email: 'customer@example.com',
                                                  line_items: prepare_line_items_hash,
                                                  mode: 'payment',
-                                                 meta_data: {},
                                                  shipping_address_collection: { allowed_countries: %w[US IN] },
                                                  success_url: "#{ENV['DOMAIN']}/success",
                                                  cancel_url: "#{ENV['DOMAIN']}/cancel"
@@ -33,7 +32,10 @@ class OrdersController < ApplicationController
         {
           price_data: {
             currency: 'inr',
-            product_data: { name: product.name },
+            product_data: {
+              name: product.name,
+              metadata: { "product_id": product.id }
+            },
             unit_amount: (final_quantity * product.price.to_i) * 100
           },
           quantity: final_quantity
