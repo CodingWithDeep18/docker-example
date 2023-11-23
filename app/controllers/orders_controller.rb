@@ -1,4 +1,10 @@
 class OrdersController < ApplicationController
+  def index
+    @pagy, @orders = pagy(
+      Order.joins(:shipping_address).select("orders.*, CONCAT(line1,', ',line2,', ',city,', ',state,', ',country) as address").order(created_at: :desc), items: 5
+    )
+  end
+
   def new
     @pagy, @products = pagy(Product.all)
   end
@@ -13,7 +19,6 @@ class OrdersController < ApplicationController
                                                  customer_email: 'customer@example.com',
                                                  line_items: prepare_line_items_hash,
                                                  mode: 'payment',
-                                                 meta_data: {},
                                                  shipping_address_collection: { allowed_countries: %w[US IN] },
                                                  success_url: "#{ENV['DOMAIN']}/success",
                                                  cancel_url: "#{ENV['DOMAIN']}/cancel"
@@ -33,7 +38,10 @@ class OrdersController < ApplicationController
         {
           price_data: {
             currency: 'inr',
-            product_data: { name: product.name },
+            product_data: {
+              name: product.name,
+              metadata: { "product_id": product.id }
+            },
             unit_amount: (final_quantity * product.price.to_i) * 100
           },
           quantity: final_quantity

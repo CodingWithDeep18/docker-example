@@ -16,9 +16,13 @@
           <%= link_to "Products", products_path, class: 'nav-link' %>
         </li>
         <li class="nav-item">
+          <%= link_to "Orders", orders_path, class: 'nav-link' %>
+        </li>
+        <li class="nav-item">
           <%= link_to "New Order", new_order_path, class: 'nav-link' %>
         </li>
       </ul>
+      <div id="cart-button"><%= render 'layouts/cart' %></div>
     </div>
   </div>
 </nav>

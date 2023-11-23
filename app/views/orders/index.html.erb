@@ -1,0 +1,30 @@
+<h1>Orders</h1>
+<% if @orders.exists? %>
+  <%== pagy_bootstrap_nav(@pagy) %>
+  <div class="mt-2">
+    <% @orders.each.with_index(1) do |order, index| %>
+     <div class="accordion mt-3" id="accordionExample">
+        <div class="accordion-item">
+          <h2 class="accordion-header">
+            <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#order_<%= order.id %>" aria-expanded="true" aria-controls="order_<%= order.id %>">
+              Order ID #<%= order.id %>
+            </button>
+          </h2>
+          <div id="order_<%= order.id %>" class="accordion-collapse collapse <%= index == 1 ? 'show' : '' %>" data-bs-parent="#accordionExample">
+            <div class="accordion-body">
+              <ul>
+                  <% order.line_items.each do |li| %>
+                  <li><b>Product:</b> <%= li.product.name %> - <b>Quantity:</b> <%= li.quantity %> - <b>Price:</b> ₹<%= li.product.price.to_i %></li>
+                  <% end %>
+              </ul>
+              <h6>Shipping Details</h6>
+              <p><b>Address:</b> <%= order.address %></p>
+            </div>
+          </div>
+        </div>
+     </div>
+    <% end %>
+  </div>
+<% else %>
+  <h3 class="text-center mt-3">No Orders Found!</h3>
+<% end %>

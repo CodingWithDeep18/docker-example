@@ -1,6 +1,13 @@
 # frozen_string_literal: true
 
 class CartsController < ApplicationController
+  include ProductsHelper
+  def index
+    cart_product_ids = session[:cart_products] ? session[:cart_products].map { |prd| prd['product_id'] } : []
+    @products = Product.where(id: cart_product_ids)
+    @total_price = @products.map { |prd| cart_product_quantity(prd.id) * prd.price.to_i }.sum
+  end
+
   def add
     cart_product = find_and_set_cart_product(params[:product_id])
     @product = Product.find_by(id: params[:product_id])
