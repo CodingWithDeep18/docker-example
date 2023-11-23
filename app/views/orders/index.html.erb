@@ -11,10 +11,11 @@
         </h2>
         <div id="order_<%= order.id %>" class="accordion-collapse collapse <%= index == 1 ? 'show' : '' %>" data-bs-parent="#accordionExample">
           <div class="accordion-body">
+            <h6>Order Items</h6>
             <ul>
-                <% order.line_items.each do |li| %>
-                <li><b>Product:</b> <%= li.product.name %> - <b>Quantity:</b> <%= li.quantity %> - <b>Price:</b> ₹<%= li.product.price.to_i %></li>
-                <% end %>
+              <% order.line_items.each do |li| %>
+              <li><b>Product:</b> <%= li.product.name %> - <b>Quantity:</b> <%= li.quantity %> - <b>Price:</b> ₹<%= li.product.price.to_i %></li>
+              <% end %>
             </ul>
             <h6>Shipping Details</h6>
             <p><b>Address:</b> <%= order.address %></p>
