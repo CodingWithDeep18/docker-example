@@ -2,6 +2,8 @@ class CreateOrderJob < ApplicationJob
   queue_as :default
 
   def perform(checkout_session_id)
+    return if Order.find_by(stripe_checkout_id: checkout_session_id)
+
     create_order_from_checkout_session(checkout_session_id)
   end
 
@@ -22,7 +24,7 @@ class CreateOrderJob < ApplicationJob
   end
 
   def create_order(event_data)
-    Order.create(total_amount: event_data['amount_total'], status: 'paid')
+    Order.create(total_amount: event_data['amount_total'], status: 'paid', stripe_checkout_id: event_data.id)
   end
 
   def create_line_items(line_items, order)

@@ -1,4 +1,8 @@
 class OrdersController < ApplicationController
+  def index
+    @pagy, @orders = pagy(Order.all.order(created_at: :desc))
+  end
+
   def new
     @pagy, @products = pagy(Product.all)
   end
