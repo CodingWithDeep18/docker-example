@@ -1,6 +1,6 @@
 class OrdersController < ApplicationController
   def index
-    @pagy, @orders = pagy(Order.all.order(created_at: :desc))
+    @pagy, @orders = pagy(Order.joins(:shipping_address).select("orders.*, CONCAT(line1,', ',line2,', ',city,', ',state,', ',country) as address").order(created_at: :desc), items: 5)
   end
 
   def new
