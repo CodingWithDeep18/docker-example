@@ -16,6 +16,10 @@ class CartsController < ApplicationController
       add_cart_product(cart_product)
     when 'minus'
       remove_cart_product(cart_product)
+    when 'update'
+      update_cart_product(cart_product, params[:value])
+    when 'remove'
+      session[:cart_products].delete_if { |h| h['product_id'] == params[:product_id] }
     end
   end
 
@@ -39,6 +43,14 @@ class CartsController < ApplicationController
       session[:cart_products].delete_if { |h| h['product_id'] == params[:product_id] }
     else
       cart_product['quantity'] -= 1
+    end
+  end
+
+  def update_cart_product(cart_product, value)
+    if cart_product['quantity'].to_i.positive?
+      cart_product['quantity'] = value
+    else
+      session[:cart_products].delete_if { |h| h['product_id'] == params[:product_id] }
     end
   end
 
