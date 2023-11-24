@@ -9,26 +9,30 @@ class CartsController < ApplicationController
   end
 
   def add
-    cart_product = find_and_set_cart_product(params[:product_id])
-    @product = Product.find_by(id: params[:product_id])
-    case params[:status]
+    cart_product = find_and_set_cart_product(cart_params[:product_id])
+    @product = Product.find_by(id: cart_params[:product_id])
+    case cart_params[:status]
     when 'add'
       add_cart_product(cart_product)
     when 'minus'
       remove_cart_product(cart_product)
     when 'remove'
-      session[:cart_products].delete_if { |h| h['product_id'] == params[:product_id] }
+      session[:cart_products].delete_if { |h| h['product_id'] == cart_params[:product_id] }
     end
   end
 
   private
+
+  def cart_params
+    params.permit(:product_id, :status)
+  end
 
   def add_cart_product(cart_product)
     if cart_product
       cart_product['quantity'] += 1
     else
       product_hash = HashWithIndifferentAccess.new
-      product_hash[:product_id] = params[:product_id]
+      product_hash[:product_id] = cart_params[:product_id]
       product_hash[:quantity] = 1
       session[:cart_products].push(product_hash)
     end
@@ -38,7 +42,7 @@ class CartsController < ApplicationController
     return unless cart_product
 
     if cart_product['quantity'].to_i == 1
-      session[:cart_products].delete_if { |h| h['product_id'] == params[:product_id] }
+      session[:cart_products].delete_if { |h| h['product_id'] == cart_params[:product_id] }
     else
       cart_product['quantity'] -= 1
     end
