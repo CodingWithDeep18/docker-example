@@ -8,7 +8,7 @@ class OrdersController < ApplicationController
   def new
     @q = Product.ransack(params[:q])
     products = params[:q].present? ? @q.result(distinct: true) : Product.all
-    @pagy, @products = pagy(products)
+    @pagy, @products = pagy(products, size: [])
   end
 
   def create_payment
