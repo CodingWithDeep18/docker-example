@@ -2,7 +2,7 @@
 <%= form_tag import_products_path, method: :post, multipart: true, data: { turbo: false } do %>
   <%= file_field_tag :file, accept: ".csv" %>
   <%= link_to "/sample-products.csv",target: "_blank", class: 'btn btn-info' do %>Download Sample File<% end %>
-  <%= submit_tag '⚙️ Import' %>
+  <%= submit_tag '⚙️ Import', class: 'btn btn-warning' %>
 <% end %>
 
 <%= link_to "Back to Products", products_path, class: 'btn btn-secondary mt-3' %>
