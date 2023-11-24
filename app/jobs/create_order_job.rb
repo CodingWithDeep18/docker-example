@@ -1,3 +1,5 @@
+# frozen_string_literal: true
+
 class CreateOrderJob < ApplicationJob
   queue_as :default
 
@@ -16,6 +18,8 @@ class CreateOrderJob < ApplicationJob
 
     order = create_order(event_data)
     create_line_items(line_items, order)
+    return order.destroy if order.line_items.count.zero?
+
     create_shipping_address(shipping_details, order)
   end
 
@@ -30,8 +34,11 @@ class CreateOrderJob < ApplicationJob
   def create_line_items(line_items, order)
     line_items.each do |li|
       stripe_product = Stripe::Product.retrieve(li.price.product)
+      product_id = stripe_product.metadata.product_id.to_i
+      next unless Product.find_by(id: product_id).present?
+
       LineItem.create!(
-        product_id: stripe_product.metadata.product_id.to_i,
+        product_id: product_id,
         quantity: li.quantity,
         order_id: order.id
       )
