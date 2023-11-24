@@ -61,6 +61,8 @@ gem 'jsbundling-rails', '~> 1.2'
 gem 'sidekiq'
 
 gem 'pagy', '~> 6.2' # omit patch digit
+
+gem 'ransack'
 group :development, :test do
   # See https://guides.rubyonrails.org/debugging_rails_applications.html#debugging-with-the-debug-gem
   gem 'bundler-audit'
