@@ -1,6 +1,7 @@
 require 'sidekiq/web'
 
 Rails.application.routes.draw do
+  devise_for :customers
   mount Sidekiq::Web => '/sidekiq'
   root 'main_dashboard#index'
   get 'main_dashboard/index'
