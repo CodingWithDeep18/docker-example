@@ -3,7 +3,7 @@ class PaymentsController < ApplicationController
 
   def create_session
     session = Stripe::Checkout::Session.create({
-                                                 customer_email: 'customer@example.com',
+                                                 customer: current_customer.stripe_customer_id,
                                                  line_items: [
                                                    {
                                                      price_data: {
