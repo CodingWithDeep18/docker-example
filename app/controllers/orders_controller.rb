@@ -30,7 +30,7 @@ class OrdersController < ApplicationController
   end
 
   def success
-    session.clear
+    session.delete(:cart_products)
   end
 
   def cancel; end
