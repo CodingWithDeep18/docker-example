@@ -7,23 +7,23 @@ Rails.application.routes.draw do
   get 'main_dashboard/index'
   get 'up' => 'rails/health#show', as: :rails_health_check
 
+  resources :webhooks, only: [:create]
+
   resources :products do
     collection do
       get :add
       post :import
     end
   end
-  resources :payments, only: %i[new]
 
-  post '/create-session', to: 'payments#create_session'
-  get '/success', to: 'payments#success'
-  get '/cancel', to: 'payments#cancel'
-  resources :webhooks, only: [:create]
   resources :orders do
     collection do
       post :create_payment
+      get :success
+      get :cancel
     end
   end
+
   resources :carts, only: [:index] do
     collection do
       post :add
