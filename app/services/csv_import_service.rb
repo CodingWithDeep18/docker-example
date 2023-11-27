@@ -1,8 +1,12 @@
-class CsvImportService
+class CsvImportService < ApplicationService
   require 'csv'
 
-  def call(file)
-    opened_file = File.open(file)
+  def initialize(file)
+    @file = file
+  end
+
+  def call
+    opened_file = File.open(@file)
     options = { headers: true }
     CSV.foreach(opened_file, **options) do |row|
       # skip row if any values is empty

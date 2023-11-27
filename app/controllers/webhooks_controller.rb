@@ -1,5 +1,6 @@
 class WebhooksController < ApplicationController
   skip_before_action :verify_authenticity_token
+  skip_before_action :authenticate_customer!
 
   def create
     payload = request.body.read

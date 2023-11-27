@@ -18,7 +18,7 @@ class OrdersController < ApplicationController
     end
 
     session = Stripe::Checkout::Session.create({
-                                                 customer_email: 'customer@example.com',
+                                                 customer: current_customer.stripe_customer_id,
                                                  line_items: prepare_line_items_hash,
                                                  mode: 'payment',
                                                  shipping_address_collection: { allowed_countries: %w[US IN] },
