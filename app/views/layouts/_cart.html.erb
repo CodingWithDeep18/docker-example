@@ -1,3 +1,7 @@
-<%= link_to carts_path, class: "btn btn-primary" do %>
-  Cart <span class="badge badge-light"><%= cart_total_products %></span>
+<%= link_to carts_path, class: "btn btn-primary position-relative" do %>
+  Cart
+  <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+    <%= cart_total_products %>
+    <span class="visually-hidden">Cart Items</span>
+  </span>
 <% end %>
