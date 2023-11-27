@@ -11,6 +11,7 @@
         </h2>
         <div id="order_<%= order.id %>" class="accordion-collapse collapse <%= index == 1 ? 'show' : '' %>" data-bs-parent="#accordionExample">
           <div class="accordion-body">
+            <h6>Status: <span class="badge bg-success"><%= order.status %></span></h6>
             <h6>Order Items</h6>
             <ul>
               <% order.line_items.each do |li| %>
