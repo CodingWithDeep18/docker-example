@@ -21,12 +21,19 @@ class OrdersController < ApplicationController
                                                  customer: current_customer.stripe_customer_id,
                                                  line_items: prepare_line_items_hash,
                                                  mode: 'payment',
+                                                 metadata: { customer_id: current_customer.id },
                                                  shipping_address_collection: { allowed_countries: %w[US IN] },
-                                                 success_url: "#{ENV['DOMAIN']}/success",
-                                                 cancel_url: "#{ENV['DOMAIN']}/cancel"
+                                                 success_url: "#{ENV['DOMAIN']}/orders/success",
+                                                 cancel_url: "#{ENV['DOMAIN']}/orders/cancel"
                                                })
     redirect_to session.url, allow_other_host: true
   end
+
+  def success
+    session.clear
+  end
+
+  def cancel; end
 
   private
 
