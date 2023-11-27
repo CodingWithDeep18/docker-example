@@ -1,7 +1,7 @@
 class OrdersController < ApplicationController
   def index
     @pagy, @orders = pagy(
-      Order.joins(:shipping_address).select("orders.*, CONCAT(line1,', ',line2,', ',city,', ',state,', ',country) as address").order(created_at: :desc), items: 5
+      current_customer.orders.joins(:shipping_address).select("orders.*, CONCAT(line1,', ',line2,', ',city,', ',state,', ',country) as address").order(created_at: :desc), items: 5
     )
   end
 
@@ -21,12 +21,19 @@ class OrdersController < ApplicationController
                                                  customer: current_customer.stripe_customer_id,
                                                  line_items: prepare_line_items_hash,
                                                  mode: 'payment',
+                                                 metadata: { customer_id: current_customer.id },
                                                  shipping_address_collection: { allowed_countries: %w[US IN] },
-                                                 success_url: "#{ENV['DOMAIN']}/success",
-                                                 cancel_url: "#{ENV['DOMAIN']}/cancel"
+                                                 success_url: "#{ENV['DOMAIN']}/orders/success",
+                                                 cancel_url: "#{ENV['DOMAIN']}/orders/cancel"
                                                })
     redirect_to session.url, allow_other_host: true
   end
+
+  def success
+    session.delete(:cart_products)
+  end
+
+  def cancel; end
 
   private
 

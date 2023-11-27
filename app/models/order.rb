@@ -4,6 +4,7 @@ class Order < ApplicationRecord
   include AASM
   has_many :line_items, dependent: :destroy
   has_one :shipping_address, dependent: :destroy
+  belongs_to :customer
 
   aasm column: 'status' do
     state :paid, initial: true

@@ -28,7 +28,8 @@ class CreateOrderJob < ApplicationJob
   end
 
   def create_order(event_data)
-    Order.create(total_amount: event_data['amount_total'], status: 'paid', stripe_checkout_id: event_data.id)
+    Order.create(total_amount: event_data['amount_total'], status: 'paid', stripe_checkout_id: event_data.id,
+                 customer_id: event_data.metadata.customer_id.to_i)
   end
 
   def create_line_items(line_items, order)
