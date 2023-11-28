@@ -7,30 +7,12 @@
 <% end %>
 <div class="row mt-3">
   <% if @products.exists? %>
-    <div class="row">
-      <div class="col-md-6">
-         <%== pagy_bootstrap_nav(@pagy) %>
-      </div>
-      <div class="col-md-6">
-        <div><%= button_to "Proceed with Payment", create_payment_orders_path, class: 'btn btn-primary', method: :post, data: {turbo: :false} %></div>
-      </div>
-    </div>
-    <% @products.find_each do |product| %>
-      <div class="col-md-3">
-       <div class="card mb-3">
-        <%= image_tag asset_path('test-product'), class: "card-img-top", alt: 'Product image' %>
-        <div class="card-body">
-          <h5 class="card-title"><%= product.name %></h5>
-          <p class="card-text"><%= product.description %></p>
-          <p class="card-text"><strong>₹<%= product.price %></strong></p>
-          <div class="d-flex justify-content-between align-items-center" id="add-to-cart-<%= product.id %>">
-            <%= render 'cart_buttons', product_id: product.id %>
-          </div>
-        </div>
-      </div>
-      </div>
+    <%= button_to "Proceed with Payment" , create_payment_orders_path, class: 'btn btn-primary mb-2' , method: :post, data: { turbo: :false } %>
+    <%= turbo_frame_tag :products, class: 'row' do %>
+      <%= render 'products_data', products: @products %>
     <% end %>
-  <% else %>  
+    <%= turbo_frame_tag 'pagination', loading: :lazy, src: new_order_path(format: :turbo_stream, page: @pagy.next) %>
+  <% else %>
     <h3>No products found!</h3>
   <% end %>
 </div>
