@@ -7,14 +7,8 @@
 <% end %>
 <div class="row mt-3">
   <% if @products.exists? %>
-    <div class="row">
-      <div class="col-md-6">
-         <%== pagy_bootstrap_nav(@pagy) %>
-      </div>
-      <div class="col-md-6">
-        <div><%= button_to "Proceed with Payment", create_payment_orders_path, class: 'btn btn-primary', method: :post, data: {turbo: :false} %></div>
-      </div>
-    </div>
+    <%== pagy_bootstrap_nav(@pagy) %>
+    <%= button_to "Proceed with Payment" , create_payment_orders_path, class: 'btn btn-primary mb-2' , method: :post, data:{ turbo: :false } %>
     <% @products.find_each do |product| %>
       <div class="col-md-3">
        <div class="card mb-3">
@@ -27,7 +21,7 @@
             <%= render 'cart_buttons', product_id: product.id %>
           </div>
         </div>
-      </div>
+       </div>
       </div>
     <% end %>
   <% else %>  
