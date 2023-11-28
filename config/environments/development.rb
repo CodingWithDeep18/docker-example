@@ -23,14 +23,17 @@ Rails.application.configure do
     config.action_controller.perform_caching = true
     config.action_controller.enable_fragment_cache_logging = true
 
-    config.cache_store = :memory_store
+#    config.cache_store = :memory_store
+     config.cache_store = :redis_cache_store, { url: 'redis://redis:6379/0' }
     config.public_file_server.headers = {
       'Cache-Control' => "public, max-age=#{2.days.to_i}"
     }
   else
     config.action_controller.perform_caching = false
 
-    config.cache_store = :null_store
+    #config.cache_store = :null_store
+    config.cache_store = :redis_cache_store, { url: 'redis://redis:6379/0' }
+
   end
 
   # Store uploaded files on the local file system (see config/storage.yml for options).
@@ -61,7 +64,7 @@ Rails.application.configure do
 
   # Suppress logger output for asset requests.
   config.assets.quiet = true
-
+  
   # Raises error for missing translations.
   # config.i18n.raise_on_missing_translations = true
 
@@ -72,6 +75,7 @@ Rails.application.configure do
   # config.action_cable.disable_request_forgery_protection = true
 
   # Raise error when a before_action's only/except options reference missing actions
+  config.assets.debug = true
   config.action_controller.raise_on_missing_callback_actions = true
 
   config.action_mailer.default_url_options = { host: 'localhost', port: 3000 }

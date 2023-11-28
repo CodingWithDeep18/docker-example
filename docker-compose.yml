@@ -1,4 +1,4 @@
-version: '3.3'  # Use the appropriate version
+version: '3.3'
 
 services:
   db:
@@ -10,7 +10,7 @@ services:
       POSTGRES_PASSWORD: postgres
 
   web:
-    build: 
+    build:
       context: .
       dockerfile: Dockerfile
     volumes:
@@ -26,12 +26,19 @@ services:
     image: "redis:latest"
     ports:
       - "6379:6379"
+    command: ["redis-server", "/etc/redis/redis.conf"]
+    volumes:
+      - ./redis.conf:/etc/redis/redis.conf
 
   sidekiq:
     build: .
     command: bundle exec sidekiq
     depends_on:
       - redis
+    environment:
+      REDIS_URL: redis://redis:6379/0
 
 volumes:
   db-data:
+
+
