@@ -51,7 +51,7 @@ class OrdersController < ApplicationController
               name: product.name,
               metadata: { "product_id": product.id }
             },
-            unit_amount: (final_quantity * product.price.to_i) * 100
+            unit_amount: product.price.to_i * 100
           },
           quantity: final_quantity
         }
