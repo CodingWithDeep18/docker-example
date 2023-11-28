@@ -1,0 +1,19 @@
+<% products.find_each do |product| %>
+<div class="col-md-3">
+  <div class="card mb-3">
+    <%= image_tag asset_path('test-product'), class: "card-img-top" , alt: 'Product image' %>
+      <div class="card-body">
+        <h5 class="card-title">
+          <%= product.name %>
+        </h5>
+        <p class="card-text">
+          <%= product.description %>
+        </p>
+        <p class="card-text"><strong>₹<%= product.price %></strong></p>
+        <div class="d-flex justify-content-between align-items-center" id="add-to-cart-<%= product.id %>">
+          <%= render 'cart_buttons' , product_id: product.id %>
+        </div>
+      </div>
+  </div>
+</div>
+<% end %>

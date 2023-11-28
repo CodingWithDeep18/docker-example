@@ -9,6 +9,10 @@ class OrdersController < ApplicationController
     @q = Product.ransack(params[:q])
     products = params[:q].present? ? @q.result(distinct: true) : Product.all
     @pagy, @products = pagy(products, size: [])
+    respond_to do |format|
+      format.html
+      format.turbo_stream
+    end
   end
 
   def create_payment
