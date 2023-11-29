@@ -6,6 +6,8 @@ class Order < ApplicationRecord
   has_one :shipping_address, dependent: :destroy
   belongs_to :customer
 
+  scope :with_shipping_address, -> { joins(:shipping_address).select("orders.*, CONCAT(line1,', ',line2,', ',city,', ',state,', ',country) as address").order(created_at: :desc)}
+
   aasm column: 'status' do
     state :paid, initial: true
     state :in_process, :shipped, :delivered
@@ -15,7 +17,10 @@ class Order < ApplicationRecord
     end
 
     event :ship do
-      transitions from: :in_process, to: :shipped
+      transitions from: :in_process, to: :shipped, if: :shipping_address_present?
+      after do
+        SendShippingEmailJob.perform_later(self.id)
+      end
     end
 
     event :deliver do
@@ -25,5 +30,9 @@ class Order < ApplicationRecord
     event :cancel do
       transitions from: %i[paid in_process shipped], to: :cancelled
     end
+  end
+
+  def shipping_address_present?
+    shipping_address.present?
   end
 end
