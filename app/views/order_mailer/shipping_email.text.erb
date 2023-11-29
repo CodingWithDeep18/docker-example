@@ -1,0 +1,14 @@
+Dear <%= @customer.email%>,
+
+Your Order with <%= @order.line_items.count %> items has been shipped!
+
+Order Items:
+<% @order.line_items.each do |li| %>
+  Product:- <%= li.product.name %> - Quantity:- <%= li.quantity %> - Price:- ₹<%= li.product.price.to_i %>
+<% end %>
+
+Shipping Details:
+
+Address:- <%= @order.address %>
+
+Thanks for waiting and have a great day!
