@@ -1,8 +1,10 @@
 <%= turbo_stream.append :products do %>
   <%= render 'products_data', products: @products %>
 <% end %>
-<%= turbo_stream.replace 'pagination' do %>
-  <% if @pagy.next.present? %>
+<% if @pagy.next.present? %>
+  <%= turbo_stream.replace 'pagination' do %>
     <%= turbo_frame_tag 'pagination', loading: :lazy, src: new_order_path(format: :turbo_stream, page: @pagy.next) %>
   <% end %>
+<% else %>
+  <%= turbo_stream.remove 'pagination' %>
 <% end %>
