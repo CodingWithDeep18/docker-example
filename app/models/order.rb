@@ -7,7 +7,7 @@ class Order < ApplicationRecord
   belongs_to :customer
 
   scope :with_shipping_address, lambda {
-                                  joins(:shipping_address).select("orders.*, CONCAT(line1,', ',line2,', ',city,', ',state,', ',country) as address").order(created_at: :desc)
+                                  joins(:shipping_address).includes(line_items: :product).select("orders.*, CONCAT(line1,', ',line2,', ',city,', ',state,', ',country) as address").order(created_at: :desc)
                                 }
 
   aasm column: 'status' do
